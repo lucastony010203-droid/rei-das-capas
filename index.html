@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👑 Rei das Capas Uruçuca</title><link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+</head><body>
+<div class="container"><header class="header"><h1>👑 Rei das Capas Uruçuca</h1><p>Capas Personalizadas para Celulares - Uruçuca, BA</p></header>
+<nav class="navbar"><button class="nav-btn active" data-tab="editor">✏️ Editor</button><button class="nav-btn" data-tab="meus-designs">📋 Meus Designs</button><button class="nav-btn" data-tab="impressao">📄 Impressão</button></nav>
+<section id="editor" class="tab-content active"><div class="editor-grid"><aside class="sidebar">
+<div class="form-group"><label>📧 Seu Email:</label><input type="email" id="email" placeholder="seu@email.com" required></div><div class="form-group"><label>📝 Nome da Capa:</label><input type="text" id="titulo" placeholder="Ex: Capa Geométrica"></div><div class="form-group"><label>📱 Modelo do Celular:</label><select id="modelo" required></select></div>
+<div class="form-group"><label>🎨 Cor de Fundo:</label><input type="color" id="corFundo" value="#ffffff"><button onclick="aplicarCorFundo()">Aplicar</button></div><div class="form-group"><label>🖼️ Carregar Imagem:</label><input type="file" id="imagemUpload" accept="image/*"><small>PNG, JPG ou SVG</small></div>
+<div class="form-group"><label>✍️ Adicionar Texto:</label><input type="text" id="texto" placeholder="Digite aqui"><select id="corTexto"><option value="black">Preto</option><option value="white">Branco</option><option value="red">Vermelho</option><option value="blue">Azul</option><option value="#d4af37">Dourado</option></select><button onclick="adicionarTexto()">+ Adicionar</button></div>
+<div class="form-group"><button onclick="limpar()" class="btn-secondary">🔄 Limpar Tudo</button><button onclick="desfazer()" class="btn-secondary">↶ Desfazer</button></div><button onclick="salvarDesign()" class="btn-primary">💾 Salvar Design</button></aside>
+<main class="editor-main"><div class="phone-frame"><canvas id="canvas"></canvas></div><p class="hint">Arraste, redimensione e rotacione os elementos</p></main></div></section>
+<section id="meus-designs" class="tab-content"><h2>Meus Designs Salvos</h2><div id="designsList" class="grid"></div></section><section id="impressao" class="tab-content"><h2>Preparar para Impressão</h2><p class="info">📌 Selecione até 3 capas para agrupar na mesma página A4</p><div id="selecaoCapas" class="grid"></div><div class="acao"><p id="contador">Capas selecionadas: 0</p><button onclick="gerarPDF()" class="btn-primary">📄 Gerar PDF</button></div></section></div><script src="app.js"></script></body></html>
